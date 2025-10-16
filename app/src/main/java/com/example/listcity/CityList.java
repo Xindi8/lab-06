@@ -34,14 +34,24 @@ public class CityList {
         return list;
     }
 
-    /** When given a city, return whether or not it belongs in the list. */
+    /**
+     * This checks whether a given city exists in the list.
+     * @param city
+     *      The city to check for in the list
+     * @return
+     *      True if the city exists in the list, otherwise false
+     */
     public boolean hasCity(City city) {
         return cities.contains(city);
     }
 
+
     /**
-     * If present remove it; otherwise throw.
-     * @throws NoSuchElementException if the city is not in the list
+     * This deletes a city from the list if it exists.
+     * @param city
+     *      The city to remove from the list
+     * @throws NoSuchElementException
+     *      If the city is not found in the list
      */
     public void delete(City city) {
         boolean removed = cities.remove(city);
@@ -50,7 +60,11 @@ public class CityList {
         }
     }
 
-    /** Return how many cities are in the list. */
+    /**
+     * This returns the total number of cities in the list.
+     * @return
+     *      The number of cities currently stored in the list
+     */
     public int countCities() {
         return cities.size();
     }
